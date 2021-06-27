@@ -1,15 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
+//引入路由配置
+import routes from "@/router/routes";
+
 Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: () => import( "../views/Home.vue"),
-  },
-];
+
 
 const router = new VueRouter({
   mode: "history",
