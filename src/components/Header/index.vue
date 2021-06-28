@@ -55,12 +55,27 @@ export default {
     goSearch() {
       console.log("点击了搜索按钮");
       // this.$router.push(`/search/${this.keyword}`);
-      this.$router.push({
-        name: "Search",
-        query: {
+      /***
+       * 判断是否有参数
+       */
+      const location = {
+        name: "Search"
+      };
+      if (this.keyword) {
+        location.query = {
           keyword: this.keyword.toUpperCase()
-        }
-      });
+        };
+      }
+
+
+      // {
+      //   name: "Search",
+      //     query: {
+      //   keyword: this.keyword.toUpperCase()
+      // }
+      // }
+
+      this.$router.push(location);
     }
   }
 };
