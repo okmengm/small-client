@@ -21,10 +21,23 @@ import Rank from "@/views/Home/Rank/Rank";
 import Like from "@/views/Home/Like/Like";
 import Floor from "@/views/Home/Floor/Floor";
 
+
+import { get_index } from "@/api";
+
 export default {
   name: "Home",
-  components: { Floor, Like, Rank, TodayRecommend, ListContainer }
+  components: { Floor, Like, Rank, TodayRecommend, ListContainer },
+  mounted() {
+
+    //挂载时请求数据
+    get_index().then(reslut => {
+      console.log(reslut);
+    });
+
+  }
 };
+
+
 </script>
 
 <style scoped>
